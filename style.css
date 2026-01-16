@@ -1,0 +1,75 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #0d6efd, #6610f2);
+  background-clip: text; /* Standard property */
+  -webkit-background-clip: text; /* For Safari & Chrome */
+  color: transparent;
+  -webkit-text-fill-color: transparent; /* For Safari */
+}
+/* Hero Section using CEO image as background */
+.hero {
+  background: url('images/ceo.jpeg') center/cover no-repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+  text-align: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* dark overlay for readability */
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+/* Simple hero animation */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.service-card {
+  transition: all 0.3s ease-in-out;
+  border-radius: 12px;
+  background-color: white;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  background: linear-gradient(135deg, #f0f0ff, #e7e5ff);
+}
+
+.icon {
+  font-size: 40px;
+}
+
+footer {
+  letter-spacing: 0.5px;
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
