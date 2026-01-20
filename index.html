@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <title>SubMarketing | Property & Business Marketing</title>
 
   <!-- Bootstrap CSS -->
@@ -22,7 +25,10 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top" style="background: linear-gradient(90deg, #0d6efd, #6610f2);">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#">SubMarketing</a>
+      <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+        <img src="images/logo.png" alt="SubMarketing Logo" class="logo-img me-2" />
+        <span class="d-none d-sm-inline">SubMarketing</span>
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -43,10 +49,16 @@
 
   <!-- Hero Section -->
   <section class="hero d-flex align-items-center text-center text-white">
-    <div class="container" data-aos="fade-up">
-      <h1 class="display-3 fw-bold mb-3">SubMarketing</h1>
-      <p class="lead mb-4">Creative Marketing Solutions for Property & Business Growth</p>
-      <a href="#contact" class="btn btn-light btn-lg px-4 py-2 rounded-pill shadow-sm">Get in Touch</a>
+    <div class="hero-slider">
+      <div class="hero-slide active" style="background-image: url('images/property.png');"></div>
+      <div class="hero-slide" style="background-image: url('images/realestate.png');"></div>
+      <div class="hero-slide" style="background-image: url('images/socialmediamarketing.jpeg');"></div>
+    </div>
+    <div class="hero-logo">
+      <img src="images/logo.png" alt="SubMarketing Logo" class="hero-logo-img" />
+    </div>
+    <div class="container hero-content" data-aos="fade-up">
+      <a href="#contact" class="btn btn-light btn-lg px-4 py-2 rounded-pill shadow-sm hero-button">Get in Touch</a>
     </div>
   </section>
 
@@ -519,9 +531,9 @@
           <p class="lead mb-3"><strong>Address:</strong></p>
           <p class="mb-4">Islamabad, Pakistan</p>
           <p class="lead mb-3"><strong>Contact Information:</strong></p>
-          <p class="mb-2">📞 Phone: <a href="tel:+923337368734" class="text-decoration-none">+92 333 7368734</a></p>
+          <p class="mb-2">📞 Phone: <a href="tel:+923213798145" class="text-decoration-none">+92 321 3798145</a></p>
           <p class="mb-2">📧 Email: <a href="mailto:submarketing.com.pk@gmail.com" class="text-decoration-none">submarketing.com.pk@gmail.com</a></p>
-          <p class="mb-4">💬 WhatsApp: <a href="https://wa.me/923337368734" target="_blank" class="text-decoration-none">+92 333 7368734</a></p>
+          <p class="mb-4">💬 WhatsApp: <a href="https://wa.me/923213798145" target="_blank" class="text-decoration-none">+92 321 3798145</a></p>
           <a href="#contact" class="btn btn-primary px-4 py-2 rounded-pill">Get Directions</a>
         </div>
       </div>
@@ -556,7 +568,7 @@
             </div>
             <div class="contact-item mb-4">
               <h5 class="fw-bold mb-2">📞 Phone</h5>
-              <p class="lead mb-0"><a href="tel:+923337368734" class="text-white text-decoration-none">+92 333 7368734</a></p>
+              <p class="lead mb-0"><a href="tel:+923213798145" class="text-white text-decoration-none">+92 321 3798145</a></p>
             </div>
             <div class="contact-item mb-4">
               <h5 class="fw-bold mb-2">📧 Email</h5>
@@ -564,14 +576,14 @@
             </div>
             <div class="contact-item mb-4">
               <h5 class="fw-bold mb-2">💬 WhatsApp</h5>
-              <p class="lead mb-0"><a href="https://wa.me/923337368734" target="_blank" class="text-white text-decoration-none">+92 333 7368734</a></p>
+              <p class="lead mb-0"><a href="https://wa.me/923213798145" target="_blank" class="text-white text-decoration-none">+92 321 3798145</a></p>
             </div>
           </div>
         </div>
         <div class="col-md-6" data-aos="fade-left">
           <div class="contact-form bg-white text-dark p-4 rounded shadow">
             <h4 class="fw-bold mb-4 text-gradient">Send us a Message</h4>
-            <form>
+            <form id="contactForm">
               <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
                 <input type="text" class="form-control" id="name" placeholder="Your Name" required>
@@ -595,13 +607,13 @@
       </div>
       <div class="text-center mt-5">
         <a href="mailto:submarketing.com.pk@gmail.com" class="btn btn-light px-4 py-2 rounded-pill shadow me-2">Email Us</a>
-        <a href="https://wa.me/923337368734" target="_blank" class="btn btn-light px-4 py-2 rounded-pill shadow">WhatsApp Us</a>
+        <a href="https://wa.me/923213798145" target="_blank" class="btn btn-light px-4 py-2 rounded-pill shadow">WhatsApp Us</a>
       </div>
     </div>
   </section>
 
   <!-- Floating WhatsApp Button -->
-  <a href="https://wa.me/923337368734" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+  <a href="https://wa.me/923213798145" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="55" height="55">
   </a>
 
@@ -615,11 +627,121 @@
 
   <!-- Animate on Scroll (AOS) JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
     AOS.init({
       duration: 1000,
       once: true
     });
+
+    // Initialize EmailJS
+    emailjs.init("jfZPIJS6Sf2zC3pBk");
+
+    // Hero Slider Auto-rotation
+    (function() {
+      const slides = document.querySelectorAll('.hero-slide');
+      let currentSlide = 0;
+      const slideInterval = 4000; // Change slide every 4 seconds
+
+      function nextSlide() {
+        // Remove active class from current slide
+        slides[currentSlide].classList.remove('active');
+        
+        // Move to next slide
+        currentSlide = (currentSlide + 1) % slides.length;
+        
+        // Add active class to new slide
+        slides[currentSlide].classList.add('active');
+      }
+
+      // Start the slider
+      if (slides.length > 0) {
+        setInterval(nextSlide, slideInterval);
+      }
+    })();
+
+    // Contact Form - Auto Send via Email
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const message = document.getElementById('message').value;
+      
+      // Show loading state
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+      
+      // Try EmailJS first (if configured), otherwise use mailto fallback
+      try {
+        // EmailJS configuration
+        const SERVICE_ID = 'service_unp6hky';
+        const TEMPLATE_ID = 'template_s18lnzh';
+        const PUBLIC_KEY = 'jfZPIJS6Sf2zC3pBk';
+        
+        // Check if EmailJS is properly configured
+        if (SERVICE_ID !== 'YOUR_SERVICE_ID' && TEMPLATE_ID !== 'YOUR_TEMPLATE_ID') {
+          // Send email via EmailJS (already initialized at top)
+          emailjs.send(SERVICE_ID, TEMPLATE_ID, {
+            from_name: name,
+            from_email: email,
+            phone: phone || 'Not provided',
+            message: message,
+            to_email: 'submarketing.com.pk@gmail.com',
+            reply_to: email
+          })
+          .then(function() {
+            alert('✅ Message sent successfully! We will get back to you soon.');
+            document.getElementById('contactForm').reset();
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+          }, function(error) {
+            console.error('EmailJS Error:', error);
+            // Fallback to mailto if EmailJS fails
+            sendViaMailto(name, email, phone, message, submitBtn, originalText);
+          });
+        } else {
+          // EmailJS not configured, use mailto fallback
+          sendViaMailto(name, email, phone, message, submitBtn, originalText);
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        // Fallback to mailto
+        sendViaMailto(name, email, phone, message, submitBtn, originalText);
+      }
+    });
+
+    // Fallback function: Send via mailto (works without setup)
+    function sendViaMailto(name, email, phone, message, submitBtn, originalText) {
+      const emailSubject = encodeURIComponent(`New Contact Form Message from ${name}`);
+      const emailBody = encodeURIComponent(
+        `New Contact Form Message\n\n` +
+        `Name: ${name}\n` +
+        `Email: ${email}\n` +
+        `Phone: ${phone || 'Not provided'}\n\n` +
+        `Message:\n${message}`
+      );
+      
+      const emailAddress = 'submarketing.com.pk@gmail.com';
+      const mailtoLink = `mailto:${emailAddress}?subject=${emailSubject}&body=${emailBody}`;
+      
+      // Open email client
+      window.location.href = mailtoLink;
+      
+      alert('Your email client will open with the message. Please click send to complete.');
+      
+      // Reset form
+      setTimeout(function() {
+        document.getElementById('contactForm').reset();
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }, 1000);
+    }
   </script>
 </body>
 </html>

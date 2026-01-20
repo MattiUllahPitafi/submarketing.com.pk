@@ -10,29 +10,137 @@ body {
   color: transparent;
   -webkit-text-fill-color: transparent; /* For Safari */
 }
-/* Hero Section using CEO image as background */
+/* Hero Section with slider */
 .hero {
-  background: url('images/ceo.jpeg') center/cover no-repeat;
-  min-height: 100vh;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   position: relative;
   text-align: center;
+  overflow: hidden;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  width: 100%;
 }
 
-.hero::before {
+/* Hero Slider */
+.hero-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: high-quality;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  object-fit: cover;
+}
+
+.hero-slide.active {
+  opacity: 1;
+}
+
+.hero-slide::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6); /* dark overlay for readability */
+  background: linear-gradient(135deg, rgba(13, 110, 253, 0.7) 0%, rgba(102, 16, 242, 0.7) 100%);
+  z-index: 1;
+}
+
+.hero-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 2;
 }
 
 .hero .container {
   position: relative;
-  z-index: 1;
+  z-index: 3;
   animation: fadeInUp 1.2s ease-in-out;
+}
+
+.hero .container * {
+  position: relative;
+  z-index: 4;
+}
+
+/* Hero Logo - Top Center */
+.hero-logo {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  pointer-events: none;
+  padding: 20px 25px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  overflow: visible;
+}
+
+.hero-logo-img {
+  width: 600px;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  -webkit-filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  margin: 0;
+  padding: 0;
+}
+
+/* Hero content layout - Centered */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-button {
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 3rem;
+}
+
+.hero-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
 /* Simple hero animation */
@@ -222,10 +330,101 @@ section {
   scroll-margin-top: 80px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
+/* Navbar Logo */
+.logo-img {
+  height: 40px;
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
+}
+
+/* Responsive hero height */
+@media (max-width: 991.98px) {
   .hero {
-    min-height: 80vh;
+    min-height: 60vh;
+    padding-top: 90px;
+    padding-bottom: 40px;
+  }
+  
+  .hero-slide {
+    background-size: cover;
+    background-position: center center;
+    background-attachment: scroll;
+  }
+  
+  .hero-logo {
+    top: 85px;
+    padding: 12px 18px;
+    width: 85%;
+    max-width: 450px;
+  }
+  
+  .hero-logo-img {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .hero-button {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero {
+    min-height: 50vh;
+    padding-top: 80px;
+    padding-bottom: 30px;
+  }
+  
+  .hero-slide {
+    background-size: cover;
+    background-position: center center;
+    background-attachment: scroll;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .hero-slider {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .hero-logo {
+    top: 70px;
+    padding: 10px 12px;
+    width: 90%;
+    max-width: 350px;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .hero-logo-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block !important;
+    visibility: visible !important;
+  }
+  
+  .hero-content {
+    width: 100%;
+    padding: 0 0.75rem;
+  }
+  
+  .hero-button {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    padding: 0.6rem 1.5rem;
+  }
+  
+  .logo-img {
+    height: 30px;
+    max-width: 100px;
   }
   
   .achievement-icon,
@@ -237,5 +436,26 @@ section {
     font-size: 32px;
     width: 50px;
     height: 50px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero {
+    min-height: 45vh;
+    padding-top: 70px;
+    padding-bottom: 25px;
+  }
+  
+  .hero-logo {
+    top: 70px;
+    padding: 10px 12px;
+    width: 90%;
+    max-width: 350px;
+  }
+  
+  .hero-button {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    padding: 0.6rem 1.5rem;
   }
 }
